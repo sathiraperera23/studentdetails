@@ -26,20 +26,20 @@
 			</tr>
 			{{-- @if(count($data) > 0) --}}
 
-				@foreach($students as $row)
+				@foreach($students as $student)
 
 					<tr>
 						{{-- <td><img src="{{ asset('images/' . $row->student_image) }}" width="75" /></td> --}}
-                        <td>{{ $row->id }}</td>
-						<td>{{ $row->name }}</td>
-                        <td>{{ $row->age }}</td>
-                        <td>{{ $row->status }}</td>
+                        <td>{{ $student->id }}</td>
+						<td>{{ $student->name }}</td>
+                        <td>{{ $student->age }}</td>
+                        <td>{{ $student->status }}</td>
 						<td>
-							<form method="post" action="{{ route('students.destroy', $row->id) }}">
+							<form method="post" action="{{ route('students.destroy', $student->id) }}">
 								@csrf
 								@method('DELETE')
-								<a href="{{ route('students.show', $row->id) }}" class="btn btn-primary btn-sm">View</a>
-								<a href="{{ route('students.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
+								<a href="{{ route('students.show', $student->id) }}" class="btn btn-primary btn-sm">View</a>
+								<a href="{{ route('students.edit', $student->id) }}" class="btn btn-warning btn-sm">Edit</a>
 								<input type="submit" class="btn btn-danger btn-sm" value="Delete" />
 							</form>
 

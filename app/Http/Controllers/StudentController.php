@@ -89,7 +89,7 @@ class StudentController extends Controller
     public function show(Student $student)
     {
         //
-        return view('show', []);
+        return view('show', compact('student'));
     }
 
     /**
@@ -130,7 +130,7 @@ class StudentController extends Controller
         $student->age = $request->age;
         $student->status = $request->status;
 
-        $student->save();   
+        $student->save();
 
 
         $student->save();
