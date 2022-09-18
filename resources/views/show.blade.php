@@ -15,6 +15,8 @@
 				{{ $student->name }}
 			</div>
 		</div>
+        <img src="{{ asset('images/'.Session::get('image')) }}" />
+
 		<div class="row mb-3">
 			<label class="col-sm-2 col-label-form"><b>Student Age</b></label>
 			<div class="col-sm-10">

@@ -26,6 +26,7 @@ Route::get('/', function () {
 
 Route::resource('students', App\Http\Controllers\StudentController::class);
 
+
 // Route::resource('students', App\Http\Controllers\StudentController::class)
 // ->middleware([
 //     'auth',
