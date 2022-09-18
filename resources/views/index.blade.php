@@ -19,7 +19,7 @@
 	<div class="card-body">
 		<table class="table table-bordered">
 			<tr>
-				<th>Image</th>
+				<th>ID</th>
 				<th>Name</th>
 				<th>Age</th>
 				<th>Status</th>
@@ -40,7 +40,8 @@
 								@method('DELETE')
 								<a href="{{ route('students.show', $student->id) }}" class="btn btn-primary btn-sm">View</a>
 								<a href="{{ route('students.edit', $student->id) }}" class="btn btn-warning btn-sm">Edit</a>
-								<input type="submit" class="btn btn-danger btn-sm" value="Delete" />
+
+                                <input type="submit" class="btn btn-danger btn-sm" value="Delete" />
 							</form>
 
 						</td>
