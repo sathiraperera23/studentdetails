@@ -27,6 +27,17 @@ class StudentController extends Controller
         ]);
     }
 
+    public function successful()
+    {
+        //
+        // $data = Student::latest()->paginate(5);
+
+        // return view('index', compact('data'))->with('i', (request()->input('page', 1) - 1) * 5);
+
+        return view('successful');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -81,7 +92,7 @@ class StudentController extends Controller
 
         $student->save();
 
-        return redirect()->route('students.index')->with('success', 'Student Data added successfully');
+        return view('successful');
     }
 
 
@@ -142,7 +153,9 @@ class StudentController extends Controller
 
 
         $student->save();
-        return redirect()->route('students.index')->with('success', 'Student Data added successfully');
+        return view('successful');
+
+        // return redirect()->route('students.successful')->with('success', 'Student Data added successfully');
 
     }
 
