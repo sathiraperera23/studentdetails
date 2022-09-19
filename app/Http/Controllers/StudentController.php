@@ -142,7 +142,7 @@ class StudentController extends Controller
 
 
         $student->save();
-        return redirect()->route('students.successful')->with('success', 'Student Data added successfully');
+        return redirect()->route('students.index')->with('success', 'Student Data added successfully');
 
     }
 
