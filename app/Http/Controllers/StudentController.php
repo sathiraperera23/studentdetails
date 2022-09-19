@@ -53,7 +53,7 @@ class StudentController extends Controller
             'name'          =>  'required',
             'age'         =>  'nullable',
             'status'         =>  'nullable',
-            'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
+            'image' => 'nullable'
 
 
             // 'image'         =>  'image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
@@ -68,15 +68,20 @@ class StudentController extends Controller
         // session()->flash('success', 'Student'.$student->email.' created updated successfully');
         // return redirect()->route('index');
 
+        // $file_name = time() . '.' . request()->image->getClientOriginalExtension();
+
+        // request()->image->move(public_path('images'), $file_name);
+
         $student = new Student;
 
         $student->name = $request->name;
         $student->age = $request->age;
         $student->status = $request->status;
+        // $student->image = $file_name;
 
         $student->save();
 
-        // return redirect()->route('index')->with('success', 'Student Added successfully.');
+        return redirect()->route('students.index')->with('success', 'Student Data added successfully');
     }
 
 
