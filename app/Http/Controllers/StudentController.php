@@ -113,19 +113,20 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateStudentRequest  $request
+     * @param  \App\Http\Requests\Request  $request
      * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateStudentRequest $request, Student $student)
+    public function update(Request $request, Student $student)
     {
         //
 
 
         $request->validate([
-            'name'      =>  'required',
-            'age'     =>  'required|age',
-            'status'     =>  'required|status',
+            'name'          =>  'required',
+            'age'         =>  'nullable',
+            'status'         =>  'nullable',
+            'image' => 'nullable',
 
         ]);
 
@@ -141,6 +142,8 @@ class StudentController extends Controller
 
 
         $student->save();
+        return redirect()->route('students.successful')->with('success', 'Student Data added successfully');
+
     }
 
     /**
